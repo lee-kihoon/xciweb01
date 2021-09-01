@@ -1,0 +1,50 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  <filter>
+    <filter-name>character encoding</filter-name>
+    <filter-class>org.apache.catalina.filters.SetCharacterEncodingFilter</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+  </filter>
+  <filter>
+  	<filter-name>MyCharacterEncoding</filter-name>
+  	<display-name>MyCharacterEncoding</display-name>
+  	<description></description>
+  	<filter-class>filter.MyCharacterEncoding</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>character encoding</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>MyCharacterEncoding</filter-name>
+  	<url-pattern>/MyCharacterEncoding</url-pattern>
+  </filter-mapping>
+  <servlet>
+  	<servlet-name>HelloServlet</servlet-name>
+  	<display-name>HelloServlet</display-name>
+  	<description></description>
+  	<servlet-class>servlet.HelloServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>HelloServlet</servlet-name>
+  	<url-pattern>/HelloServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>hello</servlet-name>
+    <servlet-class>servlet.HelloServlet</servlet-class>
+    <load-on-startup>10</load-on-startup>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>hello</servlet-name>
+    <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+</web-app>
